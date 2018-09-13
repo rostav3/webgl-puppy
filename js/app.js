@@ -57,6 +57,7 @@ function addFloor(){
 function render() {
     dogRender();
     updateBars();
+    moveBones();
     requestAnimationFrame(render);
     this.renderer.render(this.scene, this.camera);
 }
@@ -71,3 +72,4 @@ function loadTexture(url) {
 var startButton = document.getElementById("start");
 startButton.addEventListener("click", startGame);
 
+document.addEventListener("keydown", dogJump);

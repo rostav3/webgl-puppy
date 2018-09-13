@@ -1,15 +1,18 @@
+var bones = [];
 function startConveyor(){
 
-    f();
+    drawBoneOnConveyor();
 }
 
-function f() {
-    drawBone();
-    var nextBone = Math.round(Math.random() * 1000);
-    setTimeout(f,nextBone);
+function drawBoneOnConveyor() {
+    bones.push(drawBone());
+    var nextBone = Math.round(Math.random() * 5000);
+    setTimeout(drawBoneOnConveyor,nextBone);
 
 }
 
-function f1() {
-    
+function moveBones() {
+    for (let i=0; i<bones.length; i++) {
+        bones[i].position.x -= 1;
+    }
 }
