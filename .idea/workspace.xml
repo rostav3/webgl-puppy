@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ab570bed-e3f2-4dfe-b437-2dbc06f1426f" name="Default Changelist" comment="Default Changelist">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bone.js" afterPath="$PROJECT_DIR$/js/bone.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -278,7 +276,7 @@
       <workItem from="1536760890191" duration="30614000" />
       <workItem from="1536833556414" duration="2466000" />
       <workItem from="1536836747729" duration="7921000" />
-      <workItem from="1536848803641" duration="4015000" />
+      <workItem from="1536848803641" duration="4022000" />
     </task>
     <task id="LOCAL-00001" summary="change path files">
       <created>1536834532296</created>
@@ -336,11 +334,18 @@
       <option name="project" value="LOCAL" />
       <updated>1536851765502</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Default Changelist">
+      <created>1536852897514</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1536852897514</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46949000" />
+    <option name="totallyTimeSpent" value="46956000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
