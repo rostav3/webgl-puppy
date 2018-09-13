@@ -1,4 +1,4 @@
-const JUMP_HIGH = 10;
+const JUMP_HIGH = 6;
 
 var dog;
 var texture;
@@ -120,6 +120,7 @@ function drawDog(){
     hear2.scale.set(0.02,0.02,0.02);
     dog.add(hear2);
     scene.add(dog);
+    dog.position.set(0, -24,  0);
 
     changes.dog = {};
 
@@ -196,7 +197,7 @@ function dogRender() {
 
     // dogJump
     if (isJump){
-        if (needStopJump && (dog.position.y === 0)){
+        if (needStopJump && (dog.position.y === -24)){
             isJump = false;
             dogSeat();
         } else if ((changes.dog.positionY !==  dog.position.y)){
@@ -209,7 +210,7 @@ function dogRender() {
                 dogJumpFactor += dogJumpFactor/4;
             }
         } else if (dogJumpFactor !== 0){
-            changes.dog.positionY = changes.dog.positionY > 0 ? 0 : JUMP_HIGH;
+            changes.dog.positionY = changes.dog.positionY > -24 ? -24 : JUMP_HIGH;
             dogJumpFactor = (dogJumpFactor >0) ? -0.1: 0.1;
             dog.position.y += dogJumpFactor;
         }

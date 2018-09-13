@@ -46,7 +46,7 @@ function drawBone(){
     boneBody.scale.set(0.1,0.02,0.05);
     bone.add(boneBody);
 
-    bone.position.set(50, 4, 7);
+    bone.position.set(50, -24, 0);
     scene.add(bone);
     return bone;
 }
