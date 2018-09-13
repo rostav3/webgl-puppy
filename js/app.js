@@ -30,12 +30,12 @@ dirLight.castShadow = true;
 
 
 drawDog();
-dogStand();
-dogJump();
-setTimeout(function () {
-    dogStopJump();
-},2000);
-
+// dogStand();
+// dogJump();
+// setTimeout(function () {
+//     dogStopJump();
+// },2000);
+turnRight();
 
 render();
 
