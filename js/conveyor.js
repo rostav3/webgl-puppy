@@ -6,9 +6,10 @@ function startConveyor(){
 }
 
 function drawBoneOnConveyor() {
-    bones.push(drawBone());
+    var randZ = Math.round(Math.random() * 30) -20;
+    bones.push(drawBone(randZ));
     checkedBones.push(false);
-    var nextBone = Math.round(Math.random() * 10000);
+    var nextBone = Math.round(Math.random() * 1000) + 1000;
     setTimeout(drawBoneOnConveyor,nextBone);
 
 }

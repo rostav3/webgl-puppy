@@ -2,7 +2,7 @@ var bone;
 var texture;
 var circle1, circle2, circle3, circle4, boneBody;
 
-function drawBone(){
+function drawBone(zPosition){
     texture = THREE.ImageUtils.loadTexture('/webgl_puppy/assets/bone.jpg');
 
     bone = new THREE.Group();
@@ -46,7 +46,7 @@ function drawBone(){
     boneBody.scale.set(0.1,0.02,0.02);
     bone.add(boneBody);
     //
-    bone.position.set(50, -24, 0);
+    bone.position.set(50, -24, zPosition);
     scene.add(bone);
     return bone;
 }
