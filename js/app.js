@@ -37,7 +37,6 @@ startGame();
 render();
 
 function render() {
-    // dog.rotation.y -= 0.01;
     dogRender();
     updateBars();
     requestAnimationFrame(render);

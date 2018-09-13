@@ -1,6 +1,6 @@
 function startGame() {
-    // drawBone();
-// dogStand();
+    startConveyor();
+    // dogStand();
 // dogJump();
 // setTimeout(function () {
 //     dogStopJump();
