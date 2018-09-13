@@ -12,10 +12,10 @@ var url = new URL(window.location.href);
 var dogNum = url.searchParams.get("num");
 
 if (dogNum === '1'){
-    texture = THREE.ImageUtils.loadTexture('/facebookHackaton/assets/fur.jpg');
+    texture = THREE.ImageUtils.loadTexture('/webgl_puppy/assets/fur.jpg');
     eyesColor =  0xbbbbbb;
 }else{
-    texture = THREE.ImageUtils.loadTexture('/facebookHackaton/assets/fur2.jpeg');
+    texture = THREE.ImageUtils.loadTexture('/webgl_puppy/assets/fur2.jpeg');
     eyesColor =  0xffffff;
 
 }
