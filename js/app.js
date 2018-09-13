@@ -1,3 +1,5 @@
+var canvasElement = document.getElementById("canvas_dog");
+
 var renderer = new THREE.WebGLRenderer({
     canvas: document.getElementById("canvas_dog"),
     antialias: true,
@@ -5,11 +7,12 @@ var renderer = new THREE.WebGLRenderer({
 });
 
 renderer.setClearColor(new THREE.Color(0x4267b2));
-renderer.setPixelRatio(window,devicePixelRatio);
-//renderer.setSize(window.innerWidth, window.innerHeight);
+// pixelRatio =
+renderer.setPixelRatio(canvasElement.clientWidth/canvasElement.clientHeight);
+renderer.setSize(canvasElement.clientWidth, canvasElement.clientHeight);
 
 // Camera
-var camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 200000);
+var camera = new THREE.PerspectiveCamera(45, canvasElement.clientWidth/canvasElement.clientHeight, 0.1, 200000);
 camera.position.set(0,5,100);
 
 // SCENE
@@ -30,13 +33,12 @@ dirLight.castShadow = true;
 
 
 drawDog();
-drawBone();
-dogStand();
-dogJump();
-setTimeout(function () {
-    dogStopJump();
-},2000);
-
+// dogStand();
+// dogJump();
+// setTimeout(function () {
+//     dogStopJump();
+// },2000);
+turnRight();
 
 render();
 

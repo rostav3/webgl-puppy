@@ -121,10 +121,16 @@ function drawDog(){
 
 }
 
-function dogSleep(){
-    changes.dog.positonX = 1;
+function turnRight(){
+    changes.dog.rotationY = 1.5
 }
+// function dogSleep(){
+//     changes.dog.positonX = 1;
+// }
 
+function dogwalk() {
+
+}
 function dogStand() {
     changes.bodyDog.rotationX = -1;
     changes.leg1.positionY = changes.leg2.positionY = 4;
@@ -196,17 +202,12 @@ function dogRender() {
         }
     }
 
-
-
-
-    // if (changes.dog.positionX !==  dog.position.y){
-    //     if (((dog.position.y + dogJumpFactor > changes.dog.positionX) && (dog.position.y < changes.dog.positionX)) ||
-    //         ((dog.position.y + dogJumpFactor < changes.dog.positionX) && (dog.position.y > changes.dog.positionX))) {
-    //         dog.position.y = changes.dog.positionX;
-    //     }else{
-    //         dog.position.y += dogJumpFactor;
-    //         dogJumpFactor += dogJumpFactor/4;
-    //     }
-    // }
-
+    if ((changes.dog.rotationY != null) && (changes.dog.rotationY !== dog.rotation.y)) {
+        var valToAdd = (changes.dog.rotationY > dog.rotation.y) ? 0.1 : -0.1;
+        dog.rotation.y += valToAdd;
+        if (((dog.rotation.y + valToAdd > changes.dog.rotationY) && (dog.rotation.y < changes.dog.rotationY)) ||
+            ((dog.rotation.y + valToAdd < changes.dog.rotationY) && (dog.rotation.y > changes.dog.rotationY))) {
+            dog.rotation.y = changes.dog.rotationY;
+        }
+    }
 }
