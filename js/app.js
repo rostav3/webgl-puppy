@@ -53,3 +53,4 @@ function loadTexture(url) {
 var startButton = document.getElementById("start");
 startButton.addEventListener("click", startGame);
 
+document.addEventListener("keydown", dogJump);

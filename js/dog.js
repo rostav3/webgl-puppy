@@ -9,6 +9,7 @@ var counter = 0;
 /* animations params */
 var changes = {};
 var isJump = false;
+var isStart = false;
 var needStopJump = false;
 var dogJumpFactor = 0;
 
@@ -125,7 +126,8 @@ function drawDog(){
 }
 
 function turnRight(){
-    changes.dog.rotationY = 1.5
+    changes.dog.rotationY = 1.5;
+    isStart = true;
 }
 
 function dogwalk() {
@@ -138,12 +140,21 @@ function dogStand() {
     changes.tail.positionY = -3;
     changes.tail.positionZ = -6;
 }
+function dogSeat() {
+    changes.bodyDog.rotationX = 0;
+    changes.leg1.positionY = changes.leg2.positionY = 0;
+    changes.leg4.positionZ = changes.leg3.positionZ = -5;
+    changes.tail.positionY = 3;
+    changes.tail.positionZ = -10;
+}
 
 function dogJump() {
     isJump = true;
     needStopJump = false;
     dogJumpFactor = .1;
     changes.dog.positionY = JUMP_HIGH;
+    dogStand();
+
 }
 function dogStopJump(){
     needStopJump = true;
@@ -154,7 +165,7 @@ function dogRender() {
     counter++;
     // dog  stand
     if ((changes.bodyDog.rotationX != null) && (changes.bodyDog.rotationX !== bodyDog.rotation.x)) {
-        var valToAdd = (changes.bodyDog.rotationX > bodyDog.rotation.x) ? 0.1 : -0.1;
+        var valToAdd = (changes.bodyDog.rotationX > bodyDog.rotation.x) ? 0.5 : -0.5;
         bodyDog.rotation.x += valToAdd;
         if (((bodyDog.rotation.x + valToAdd > changes.bodyDog.rotationX) && (bodyDog.rotation.x < changes.bodyDog.rotationX)) ||
             ((bodyDog.rotation.x + valToAdd < changes.bodyDog.rotationX) && (bodyDog.rotation.x > changes.bodyDog.rotationX))) {
@@ -187,7 +198,9 @@ function dogRender() {
     if (isJump){
         if (needStopJump && (dog.position.y === 0)){
             isJump = false;
+            dogSeat();
         } else if ((changes.dog.positionY !==  dog.position.y)){
+            needStopJump = true;
             if (((dog.position.y + dogJumpFactor > changes.dog.positionY) && (dog.position.y < changes.dog.positionY)) ||
                 ((dog.position.y + dogJumpFactor < changes.dog.positionY) && (dog.position.y > changes.dog.positionY))) {
                 dog.position.y = changes.dog.positionY;
@@ -210,6 +223,8 @@ function dogRender() {
             dog.rotation.y = changes.dog.rotationY;
         }
     }
+
+    if (!isJump && isStart)
     if (counter%5 === 0){
         leg1.rotation.x = Math.pow(-1, counter)/4;
         leg3.rotation.x = Math.pow(-1, counter)/4;
