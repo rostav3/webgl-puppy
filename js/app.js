@@ -34,6 +34,7 @@ addFloor();
 drawDog();
 render();
 updateBars();
+addCircleBar();
 
 
 function render() {
