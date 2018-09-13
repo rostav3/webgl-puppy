@@ -30,3 +30,5 @@ function addFloor(){
     scene.add(floor);
 }
 
+
+

@@ -1,4 +1,5 @@
 const JUMP_HIGH = 6;
+const X_POSITION = 0;
 
 var dog;
 var texture;
@@ -120,7 +121,7 @@ function drawDog(){
     hear2.scale.set(0.02,0.02,0.02);
     dog.add(hear2);
     scene.add(dog);
-    dog.position.set(0, -24,  0);
+    dog.position.set(X_POSITION, -24,  0);
 
     changes.dog = {};
 
