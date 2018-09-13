@@ -1,4 +1,5 @@
 function startGame() {
+    startButton.parentNode.removeChild(startButton);
     // drawBone();
 // dogStand();
 // dogJump();
@@ -6,5 +7,4 @@ function startGame() {
 //     dogStopJump();
 // },2000);
     turnRight();
-
 }
