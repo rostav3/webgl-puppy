@@ -1,16 +1,14 @@
-var bone;
 var texture;
 var circle1, circle2, circle3, circle4, boneBody;
 
 function drawBone(){
     texture = THREE.ImageUtils.loadTexture('/webgl_puppy/assets/bone.jpg');
 
-    bone = new THREE.Group();
+    var bone = new THREE.Group();
     var material = new THREE.MeshBasicMaterial({
         map:texture});
     var materialDarker = new THREE.MeshBasicMaterial({
         map:texture});
-    // materialDarker.color.set(0xbbbbbb);
 
     var ball = new THREE.SphereGeometry(50,25, 25);
 
