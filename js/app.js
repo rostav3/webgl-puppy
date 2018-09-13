@@ -33,6 +33,7 @@ dirLight.castShadow = true;
 addFloor();
 drawDog();
 render();
+updateBars();
 
 
 function render() {
