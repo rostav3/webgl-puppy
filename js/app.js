@@ -29,10 +29,12 @@ scene.add( dirLight );
 dirLight.castShadow = true;
 
 
-
 drawDog();
-// dogStand();
-// dogJump();
+dogStand();
+dogJump();
+setTimeout(function () {
+    dogStopJump();
+},2000);
 
 
 render();
