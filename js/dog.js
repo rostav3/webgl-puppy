@@ -1,23 +1,28 @@
+const JUMP_HIGH = 10;
+
 var dog;
 var texture;
 var eyesColor = "";
 var leg1, leg2, leg3, leg4, bodyDog, tail;
 
-var dogJumpPosition = 0;
-
+/* animations params */
 var changes = {};
+var isJump = false;
+var needStopJump = false;
+var dogJumpFactor = 0;
 
-var rotateLegs = 0;
-var url = new URL(window.location.href);
-var dogNum = url.searchParams.get("num");
+defineDog();
 
-if (dogNum === '1'){
-    texture = THREE.ImageUtils.loadTexture('/webgl_puppy/assets/fur.jpg');
-    eyesColor =  0xbbbbbb;
-}else{
-    texture = THREE.ImageUtils.loadTexture('/webgl_puppy/assets/fur2.jpeg');
-    eyesColor =  0xffffff;
-
+function defineDog(){
+    var url = new URL(window.location.href);
+    var dogNum = url.searchParams.get("num");
+    if (dogNum === '1'){
+        texture = THREE.ImageUtils.loadTexture('/webgl_puppy/assets/fur.jpg');
+        eyesColor =  0xbbbbbb;
+    }else{
+        texture = THREE.ImageUtils.loadTexture('/webgl_puppy/assets/fur2.jpeg');
+        eyesColor =  0xffffff;
+    }
 }
 
 function drawDog(){
@@ -111,9 +116,15 @@ function drawDog(){
     hear2.scale.set(0.02,0.02,0.02);
     dog.add(hear2);
     scene.add(dog);
+
     changes.dog = {};
 
 }
+
+function dogSleep(){
+    changes.dog.positonX = 1;
+}
+
 function dogStand() {
     changes.bodyDog.rotationX = -1;
     changes.leg1.positionY = changes.leg2.positionY = 4;
@@ -123,11 +134,19 @@ function dogStand() {
 }
 
 function dogJump() {
-    dogJumpPosition = .1;
-    changes.dog.positionY = 10;
+    isJump = true;
+    needStopJump = false;
+    dogJumpFactor = .1;
+    changes.dog.positionY = JUMP_HIGH;
+}
+function dogStopJump(){
+    needStopJump = true;
 }
 
+// Handle dog animations
 function dogRender() {
+
+    // dog  stand
     if ((changes.bodyDog.rotationX != null) && (changes.bodyDog.rotationX !== bodyDog.rotation.x)) {
         var valToAdd = (changes.bodyDog.rotationX > bodyDog.rotation.x) ? 0.1 : -0.1;
         bodyDog.rotation.x += valToAdd;
@@ -158,17 +177,36 @@ function dogRender() {
         tail.position.z += (changes.tail.positionZ > tail.position.z) ? 1 : -1;
     }
 
-    if (changes.dog.positionY !==  dog.position.y){
-        if (((dog.position.y + dogJumpPosition > changes.dog.positionY) && (dog.position.y < changes.dog.positionY)) ||
-            ((dog.position.y + dogJumpPosition < changes.dog.positionY) && (dog.position.y > changes.dog.positionY))) {
-            dog.position.y = changes.dog.positionY;
-        }else{
-            dog.position.y += dogJumpPosition;
-            dogJumpPosition += dogJumpPosition/4;
+    // dogJump
+    if (isJump){
+        if (needStopJump && (dog.position.y === 0)){
+            isJump = false;
+        } else if ((changes.dog.positionY !==  dog.position.y)){
+            if (((dog.position.y + dogJumpFactor > changes.dog.positionY) && (dog.position.y < changes.dog.positionY)) ||
+                ((dog.position.y + dogJumpFactor < changes.dog.positionY) && (dog.position.y > changes.dog.positionY))) {
+                dog.position.y = changes.dog.positionY;
+            }else{
+                dog.position.y += dogJumpFactor;
+                dogJumpFactor += dogJumpFactor/4;
+            }
+        } else if (dogJumpFactor !== 0){
+            changes.dog.positionY = changes.dog.positionY > 0 ? 0 : JUMP_HIGH;
+            dogJumpFactor = (dogJumpFactor >0) ? -0.1: 0.1;
+            dog.position.y += dogJumpFactor;
         }
-    }else if (dogJumpPosition !== 0){
-        changes.dog.positionY = -changes.dog.positionY;
-        dogJumpPosition = (dogJumpPosition >0) ? -0.1: 0.1;
-        dog.position.y += dogJumpPosition;
     }
+
+
+
+
+    // if (changes.dog.positionX !==  dog.position.y){
+    //     if (((dog.position.y + dogJumpFactor > changes.dog.positionX) && (dog.position.y < changes.dog.positionX)) ||
+    //         ((dog.position.y + dogJumpFactor < changes.dog.positionX) && (dog.position.y > changes.dog.positionX))) {
+    //         dog.position.y = changes.dog.positionX;
+    //     }else{
+    //         dog.position.y += dogJumpFactor;
+    //         dogJumpFactor += dogJumpFactor/4;
+    //     }
+    // }
+
 }
