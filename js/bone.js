@@ -10,31 +10,31 @@ function drawBone(){
         map:texture});
     var materialDarker = new THREE.MeshBasicMaterial({
         map:texture});
-    // materialDarker.color.set(0xbbbbbb);
+     materialDarker.color.set(0xbbbbbb);
 
     var ball = new THREE.SphereGeometry(50,25, 25);
 
     // left side
-    circle1 = new THREE.Mesh(ball, material);
+    circle1 = new THREE.Mesh(ball, materialDarker);
     circle1.position.set(-3.5, 0.5, 1.5);
     circle1.scale.set(0.03,0.03,0.03);
     bone.add(circle1);
     changes.circle1 = {};
 
-    circle2 = new THREE.Mesh(ball, material);
+    circle2 = new THREE.Mesh(ball, materialDarker);
     circle2.position.set(-3.5, 0.5, -1.5);
     circle2.scale.set(0.03,0.03,0.03);
     bone.add(circle2);
     changes.circle2 = {};
 
     // right side
-    circle3 = new THREE.Mesh(ball, material);
+    circle3 = new THREE.Mesh(ball, materialDarker);
     circle3.position.set(3.5, 0.5, 1.5);
     circle3.scale.set(0.030,0.030,0.030);
     bone.add(circle3);
     changes.circle3 = {};
 
-    circle4 = new THREE.Mesh(ball, material);
+    circle4 = new THREE.Mesh(ball, materialDarker);
     circle4.position.set(3.5, 0.5, -1.5);
     circle4.scale.set(0.030,0.030,0.030);
     bone.add(circle4);
