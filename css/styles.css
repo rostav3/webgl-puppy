@@ -2,9 +2,27 @@ body{
     margin: 0;
     overflow: hidden;
 }
+.canvas-container {
+    position: relative;
+    width: 1000px;
+    height: 500px;
+    margin: auto;
+}
 canvas{
     background-color: aquamarine;
     width: 100%;
     height: 100%;
-
+    position: absolute;
+}
+#start-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+#start{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
+    width: 20%;
 }
