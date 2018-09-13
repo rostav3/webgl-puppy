@@ -33,6 +33,7 @@ dirLight.castShadow = true;
 
 
 drawDog();
+drawBone();
 // dogStand();
 // dogJump();
 // setTimeout(function () {
