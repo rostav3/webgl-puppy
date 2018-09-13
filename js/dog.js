@@ -30,9 +30,11 @@ function drawDog(){
     dog = new THREE.Group();
     var materialFur = new THREE.MeshBasicMaterial({
         map:texture});
+    materialFur.color.set(0xffffff);
+
     var materialDarkerFur = new THREE.MeshBasicMaterial({
         map:texture});
-    materialDarkerFur.color.set(0xbbbbbb);
+    materialDarkerFur.color.set(0xaaaaaa);
 
     var materialWhite = new THREE.MeshLambertMaterial({
         color:eyesColor});
@@ -96,12 +98,12 @@ function drawDog(){
 
     // Hears
     var hear1 = new THREE.Mesh(ball, materialDarkerFur);
-    hear1.position.set(3.8, 14, 6);
+    hear1.position.set(3.8, 15, 6);
     hear1.scale.set(0.022,0.03,0.015);
     dog.add(hear1);
 
     var hear2 = new THREE.Mesh(ball, materialDarkerFur);
-    hear2.position.set(-3.8, 14, 6);
+    hear2.position.set(-3.8, 15, 6);
     hear2.scale.set(0.022,0.03,0.015);
     dog.add(hear2);
 
