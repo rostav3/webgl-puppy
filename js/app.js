@@ -38,6 +38,7 @@ render();
 function render() {
     dogRender();
     updateBars();
+    moveBones();
     requestAnimationFrame(render);
     this.renderer.render(this.scene, this.camera);
 }
