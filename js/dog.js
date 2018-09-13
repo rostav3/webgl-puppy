@@ -4,6 +4,7 @@ var dog;
 var texture;
 var eyesColor = "";
 var leg1, leg2, leg3, leg4, bodyDog, tail;
+var counter = 0;
 
 /* animations params */
 var changes = {};
@@ -126,9 +127,6 @@ function drawDog(){
 function turnRight(){
     changes.dog.rotationY = 1.5
 }
-// function dogSleep(){
-//     changes.dog.positonX = 1;
-// }
 
 function dogwalk() {
 
@@ -153,7 +151,7 @@ function dogStopJump(){
 
 // Handle dog animations
 function dogRender() {
-
+    counter++;
     // dog  stand
     if ((changes.bodyDog.rotationX != null) && (changes.bodyDog.rotationX !== bodyDog.rotation.x)) {
         var valToAdd = (changes.bodyDog.rotationX > bodyDog.rotation.x) ? 0.1 : -0.1;
@@ -211,5 +209,13 @@ function dogRender() {
             ((dog.rotation.y + valToAdd < changes.dog.rotationY) && (dog.rotation.y > changes.dog.rotationY))) {
             dog.rotation.y = changes.dog.rotationY;
         }
+    }
+    if (counter%5 === 0){
+        leg1.rotation.x = Math.pow(-1, counter)/4;
+        leg3.rotation.x = Math.pow(-1, counter)/4;
+
+        leg4.rotation.x = Math.pow(-1, counter+1)/4;
+        leg2.rotation.x = Math.pow(-1, counter+1)/4;
+
     }
 }
