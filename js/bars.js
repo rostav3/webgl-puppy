@@ -1,18 +1,23 @@
-var speedBar = document.getElementById("speedBar");
 var inputBar = document.getElementById("inputBar");
-var happinessBar = document.getElementById("happinessBar");
+var expressionBar = document.getElementById("expressionBar");
+var speechBar = document.getElementById("speechBar");
+var handsBar = document.getElementById("handsBar");
 
-var speedPercent = 50;
 var inputPercent = 50;
-var happinessPercent = 50;
+var expressionPercent = 50;
+var speechPercent = 50;
+var handsPercent = 50;
 
 function updateBars() {
-    happinessBar.style.width = happinessPercent + '%';
-    happinessBar.innerHTML = happinessPercent + '%';
-
-    speedBar.style.width = speedPercent + '%';
-    speedBar.innerHTML = speedPercent + '%';
-
     inputBar.style.width = inputPercent + '%';
     inputBar.innerHTML = inputPercent + '%';
+
+    expressionBar.style.width = expressionPercent + '%';
+    expressionBar.innerHTML = expressionPercent + '%';
+
+    speechBar.style.width = speechPercent + '%';
+    speechBar.innerHTML = speechPercent + '%';
+
+    handsBar.style.width = handsPercent + '%';
+    handsBar.innerHTML = handsPercent + '%';
 }

@@ -10,7 +10,6 @@ function drawBoneOnConveyor() {
     checkedBones.push(false);
     var nextBone = Math.round(Math.random() * 10000);
     setTimeout(drawBoneOnConveyor,nextBone);
-
 }
 
 function moveBones() {

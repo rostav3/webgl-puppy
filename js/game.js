@@ -1,6 +1,7 @@
 function startGame() {
     startButton.parentNode.removeChild(startButton);
     startConveyor();
+    bark();
     // drawBone();
 // dogStand();
 // dogJump();
