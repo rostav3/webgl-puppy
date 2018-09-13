@@ -6,7 +6,7 @@ var renderer = new THREE.WebGLRenderer({
 
 renderer.setClearColor(new THREE.Color(0x4267b2));
 // renderer.setPixelRatio(window,devicePixelRatio);
-renderer.setSize(window.innerWidth, window.innerHeight);
+//renderer.setSize(window.innerWidth, window.innerHeight);
 
 // Camera
 var camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 200000);
