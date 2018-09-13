@@ -1,13 +1,12 @@
 var canvasElement = document.getElementById("canvas_dog");
 
 var renderer = new THREE.WebGLRenderer({
-    canvas: document.getElementById("canvas_dog"),
+    canvas: canvasElement,
     antialias: true,
     alpha: true
 });
 
-renderer.setClearColor(new THREE.Color(0x4267b2));
-// pixelRatio =
+renderer.setClearColor(new THREE.Color(0x4267b2),0);
 renderer.setPixelRatio(canvasElement.clientWidth/canvasElement.clientHeight);
 renderer.setSize(canvasElement.clientWidth, canvasElement.clientHeight);
 
