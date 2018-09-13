@@ -53,4 +53,30 @@ function loadTexture(url) {
 var startButton = document.getElementById("start");
 startButton.addEventListener("click", startGame);
 
-document.addEventListener("keydown", dogJump);
+$( document ).on( "keydown", function( event ) {
+    switch( event.keyCode ) {
+        case $.ui.keyCode.SPACE:
+        case $.ui.keyCode.ENTER:
+            dogJump();
+            break;
+        case $.ui.keyCode.UP:
+            walkTop();
+            break;
+        case $.ui.keyCode.DOWN:
+            walkDown();
+            break;
+    }
+
+});
+
+$( document ).on( "keyup", function( event ) {
+    switch( event.keyCode ) {
+        case $.ui.keyCode.UP:
+            stopWalk();
+            break;
+        case $.ui.keyCode.DOWN:
+            stopWalk();
+            break;
+    }
+
+});

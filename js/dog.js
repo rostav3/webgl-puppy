@@ -6,7 +6,7 @@ var texture;
 var eyesColor = "";
 var leg1, leg2, leg3, leg4, bodyDog, tail;
 var counter = 0;
-
+var zDog = 0;
 /* animations params */
 var changes = {};
 var isJump = false;
@@ -132,9 +132,17 @@ function turnRight(){
     isStart = true;
 }
 
-function dogwalk() {
-
+function walkTop() {
+    zDog = -1;
 }
+function walkDown() {
+    zDog = 1;
+}
+function stopWalk() {
+    zDog = 0;
+}
+
+
 function dogStand() {
     changes.bodyDog.rotationX = -1;
     changes.leg1.positionY = changes.leg2.positionY = 4;
@@ -235,4 +243,5 @@ function dogRender() {
         leg2.rotation.x = Math.pow(-1, counter+1)/4;
 
     }
+    dog.position.z += zDog;
 }
