@@ -17,18 +17,15 @@ function moveBones() {
     for (let i=0; i<bones.length; i++) {
         if (bones[i]){
             bones[i].position.x -= 1;
-            if(isJump){
-                if((bones[i].position.x >= -5 && bones[i].position.x <= 10) && (!checkedBones[i])){
-                    inputPercent ++;
-                    checkedBones[i] = true;
-                }
+
+            if((bones[i].position.x >= -5 && bones[i].position.x <= 10) && (!checkedBones[i])&& (Math.abs(bones[i].position.z - dog.position.z) >= 10)){
+                inputPercent--;
+                checkedBones[i] = true;
             }
-            else{
-                if(bones[i].position.x <= X_POSITION && bones[i].position.x >= -5){
-                    inputPercent --;
+            else if(bones[i].position.x <= X_POSITION && bones[i].position.x >= -5 && (!checkedBones[i])&& (Math.abs(bones[i].position.z - dog.position.z) < 10)){
+                    inputPercent++;
                     scene.remove(bones[i]);
                     bones[i] = null;
-                }
             }
         }
 
