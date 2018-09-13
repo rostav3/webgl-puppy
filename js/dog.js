@@ -111,7 +111,6 @@ function drawDog(){
     hear2.scale.set(0.02,0.02,0.02);
     dog.add(hear2);
     scene.add(dog);
-
     changes.dog = {};
 
 }
