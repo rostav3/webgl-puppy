@@ -33,7 +33,6 @@ dirLight.castShadow = true;
 
 
 drawDog();
-startGame();
 render();
 
 function render() {
@@ -49,4 +48,7 @@ function loadTexture(url) {
     var texture = new THREE.TextureLoader().load(url);
     return texture;
 }
+
+var startButton = document.getElementById("start");
+startButton.addEventListener("click", startGame);
 
