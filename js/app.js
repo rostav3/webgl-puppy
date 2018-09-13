@@ -31,9 +31,28 @@ dirLight.position.multiplyScalar( 30 );
 scene.add( dirLight );
 dirLight.castShadow = true;
 
-
+addFloor();
 drawDog();
 render();
+
+function addFloor(){
+    var floor = new THREE.Group();
+    var textureFloor = THREE.ImageUtils.loadTexture('/webgl_puppy/assets/floor.png');
+    var materialFloor = new THREE.MeshBasicMaterial({
+        map:textureFloor});
+    materialFloor.color.set(0xffffff);
+
+    var rectangle = new THREE.CubeGeometry(300,0,100,0);
+
+// left side
+    floor = new THREE.Mesh(rectangle, materialFloor);
+    floor.position.set(0, -30, 0);
+    floor.scale.set(0.5,0.5,0.5);
+    floor.add(rectangle);
+    changes.floor = {};
+    scene.add(floor);
+}
+
 
 function render() {
     dogRender();
