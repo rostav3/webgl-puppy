@@ -5,7 +5,7 @@ var renderer = new THREE.WebGLRenderer({
 });
 
 renderer.setClearColor(new THREE.Color(0x4267b2));
-// renderer.setPixelRatio(window,devicePixelRatio);
+renderer.setPixelRatio(window,devicePixelRatio);
 //renderer.setSize(window.innerWidth, window.innerHeight);
 
 // Camera
@@ -42,6 +42,7 @@ render();
 function render() {
     // dog.rotation.y -= 0.01;
     dogRender();
+    updateBars();
     requestAnimationFrame(render);
     this.renderer.render(this.scene, this.camera);
 }
