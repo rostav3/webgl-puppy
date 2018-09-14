@@ -38,3 +38,8 @@ canvas{
     margin-top: 20%;
     width: 20%;
 }
+
+#header{
+    text-align: center;
+    width: 100%;
+}
