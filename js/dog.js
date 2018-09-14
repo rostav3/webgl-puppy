@@ -20,10 +20,10 @@ function defineDog(){
     var url = new URL(window.location.href);
     var dogNum = url.searchParams.get("num");
     if (dogNum === '2'){
-        texture = THREE.ImageUtils.loadTexture('/webgl_puppy/assets/fur.jpg');
+        // texture = THREE.ImageUtils.loadTexture('/webgl_puppy/assets/fur.jpg');
         eyesColor =  0xbbbbbb;
     }else{
-        texture = THREE.ImageUtils.loadTexture('/webgl_puppy/assets/fur2.jpeg');
+        // texture = THREE.ImageUtils.loadTexture('/webgl_puppy/assets/fur2.jpeg');
         eyesColor =  0xffffff;
     }
 }
@@ -31,13 +31,13 @@ function defineDog(){
 function drawDog(){
     // Dog
     dog = new THREE.Group();
-    var materialFur = new THREE.MeshBasicMaterial({
-        map:texture});
-    materialFur.color.set(0xDEB887);
+    var materialFur = new THREE.MeshLambertMaterial({
+        color:0x994C00});
+    // materialFur.color.set(0xDEB887);
 
-    var materialDarkerFur = new THREE.MeshBasicMaterial({
-        map:texture});
-    materialDarkerFur.color.set(0xad9665);
+        var materialDarkerFur = new THREE.MeshLambertMaterial({
+            color:0x331900});
+
 
     var materialWhite = new THREE.MeshLambertMaterial({
         color:eyesColor});
