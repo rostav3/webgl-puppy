@@ -9,6 +9,7 @@ function startGame() {
 //     dogStopJump();
 // },2000);
     turnRight();
+    updateBarsFromServer();
 }
 
 var textureFloor;

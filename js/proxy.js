@@ -1,23 +1,23 @@
 //var url = 'http://169.254.242.174:5000/';
 var url = 'http://192.168.43.29:3000/';
 
-function updateBars() {
-    expressionPercent = getJson('expression');
-    speechPercent = getJson('speech');
-    handsPercent =  getJson('hands');
-    setTimeout(updateBars, 1000);
-}
+function updateBarsFromServer() {
 
-
-function getJson(dataName){
-    $.ajax({
-        dataType: "json",
-        url: url + dataName,
-        data: data,
-        success: success
+    $.get(url + 'expression',function (data) {
+        expressionPercent = data.val;
     });
-    return data.val;
+    $.get(url + 'speech',function (data) {
+        speechPercent = data.val;
+    });
+    $.get(url + 'hands',function (data) {
+        handsPercent = data.val;
+    });
+    setTimeout(updateBarsFromServer, 1000);
 }
+
+
+
+
 
 
 
