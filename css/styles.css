@@ -11,10 +11,11 @@ body{
 #bars
 {
     width: 1000px;
-    height: 10%;
     padding: 15px;
 }
-
+.container{
+    height: 10%;
+}
 .canvas-container {
     position: relative;
     margin: auto;
@@ -23,12 +24,12 @@ body{
 }
 canvas{
     width: 100%;
-    height: 90%;
+    height: 80%;
     position: absolute;
 }
 #start-container{
     width: 100%;
-    height: 90%;
+    height: 80%;
     position: absolute;
 }
 #start{
