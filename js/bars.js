@@ -28,11 +28,11 @@ function updateBars() {
 
 function changeHeader(){
     averagePercent = (inputPercent + expressionPercent + speechPercent + handsPercent) / 4;
-    if(averagePercent < 30){
+    if(averagePercent <= 30){
         header.textContent = "Your child is stressful. Please pay attention to him.";
     }
-    else if(averagePercent > 70){
-        header.textContent = "Your child seems to be happy.";
+    else if(averagePercent >= 70){
+        header.textContent = "Your child seems to be calm and happy.";
     }
     else{
         header.textContent = "";
