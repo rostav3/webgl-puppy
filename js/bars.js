@@ -34,5 +34,9 @@ function changeHeader(){
     else if(averagePercent > 70){
         header.textContent = "Your child seems to be happy.";
     }
+    else{
+        header.textContent = "";
+    }
+
 }
 
