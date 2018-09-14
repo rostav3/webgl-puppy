@@ -1,4 +1,5 @@
-var url = 'http://169.254.242.174:5000/';
+//var url = 'http://169.254.242.174:5000/';
+var url = 'http://192.168.43.29:3000/';
 
 function updateBars() {
     expressionPercent = getJson('expression');
@@ -10,11 +11,12 @@ function updateBars() {
 
 function getJson(dataName){
     $.ajax({
+        dataType: "json",
         url: url + dataName,
         data: data,
         success: success
     });
-    return data;
+    return data.val;
 }
 
 
