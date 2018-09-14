@@ -1,5 +1,5 @@
-//var url = 'http://169.254.242.174:5000/';
-var url = 'http://192.168.43.29:3000/';
+var url = 'http://169.254.242.174:5000/';
+//var url = 'http://192.168.43.29:3000/';
 
 function updateBarsFromServer() {
 
