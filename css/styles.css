@@ -36,6 +36,11 @@ canvas{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20%;
+    margin-top: 5%;
     width: 20%;
+}
+
+#header{
+    text-align: center;
+    width: 100%;
 }
