@@ -8,16 +8,6 @@ var expressionPercent = 50;
 var speechPercent = 50;
 var handsPercent = 50;
 
-function addCircleBar(){
-    $('#circleBar').circleProgress({
-        value: 0.75,
-        size: 80,
-        fill: {
-            gradient: ["red", "orange"]
-        }
-    });
-}
-
 function updateBars() {
     inputBar.style.width = inputPercent + '%';
     inputBar.innerHTML = inputPercent + '%';

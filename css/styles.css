@@ -39,11 +39,3 @@ canvas{
     margin-top: 20%;
     width: 20%;
 }
-
-#circleBar{
-    margin-top: 20px;
-    margin-right: -20px;
-    width: 150px;
-    height: 150px;
-    position: relative;
-}
